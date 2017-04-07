@@ -10,11 +10,13 @@ paramiko.util.log_to_file("filename.log")
 env.forward_agent = True
 env.use_ssh_config = True
 
+# Edit NAGIOS_CORE_VERSION with target version to be upgraded
+# Note that we only tested from 4.2.1 to 4.2.4 and from those to 4.3.1
 NAGIOS_CORE_VERSION = "4.3.1"
 NAGIOS_CORE_PACKAGE = "nagios-{}".format(NAGIOS_CORE_VERSION)
 NAGIOS_CORE_URL = "https://assets.nagios.com/downloads/nagioscore/releases/{package}.tar.gz".format(package=NAGIOS_CORE_PACKAGE)
 
-env.hosts = ['edb-nagios']
+env.hosts = ['<ip or hostname where Nagios core is installed>']
 
 def upgradeNagios():
          run('hostname')
