@@ -1,0 +1,5 @@
+#! /bin/sh
+
+sudo rm nagios_etc_backup_*
+
+sudo tar czvf nagios_etc_backup_`date +%d%b%y`.tar.gz /usr/local/nagios/etc/*
